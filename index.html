@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12302D">
+  <title>ScholarTrack | Welcome</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='8' fill='%2314B8A6'/%3E%3Cpath d='M7 12l7-4 7 4-7 4z' fill='%23fff'/%3E%3Cpath d='M10 15v3c0 1 2 2 4 2s4-1 4-2v-3' stroke='%23fff' stroke-width='1.6' fill='none'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Icon library -->
+  <svg aria-hidden="true" style="position:absolute;width:0;height:0">
+    <symbol id="i-user" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+  </svg>
+
+  <div class="auth">
+
+    <aside class="brand-panel">
+      <div class="logo">
+        <svg width="32" height="32" viewBox="0 0 28 28" aria-hidden="true">
+          <rect width="28" height="28" rx="8" fill="#14B8A6"/>
+          <path d="M7 12l7-4 7 4-7 4z" fill="#fff"/>
+          <path d="M10 15v3c0 1 2 2 4 2s4-1 4-2v-3" stroke="#fff" stroke-width="1.6" fill="none"/>
+        </svg>
+        ScholarTrack
+      </div>
+
+      <div class="brand-body">
+        <h2>Manage every scholarship applicant in one place.</h2>
+        <p class="brand-lead">Track applications, score reviews, and award with confidence.</p>
+        <ul class="features">
+          <li>
+            <span class="f-icon"><svg class="icon" aria-hidden="true"><use href="#i-file"/></svg></span>
+            <div><h3>Collect applications</h3><p>One form for essays, transcripts, and recommendation letters.</p></div>
+          </li>
+          <li>
+            <span class="f-icon"><svg class="icon" aria-hidden="true"><use href="#i-star"/></svg></span>
+            <div><h3>Review with a rubric</h3><p>Score academics, need, leadership, and essays the same way every time.</p></div>
+          </li>
+          <li>
+            <span class="f-icon"><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg></span>
+            <div><h3>Track every decision</h3><p>See who is new, in review, interviewing, or awarded.</p></div>
+          </li>
+        </ul>
+      </div>
+
+      <p class="brand-foot">&copy; <span id="year"></span> ScholarTrack</p>
+    </aside>
+
+    <main class="form-panel">
+      <div class="card">
+
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" id="tab-login" aria-selected="true" aria-controls="panel-login" data-show="login">Log in</button>
+          <button type="button" role="tab" id="tab-signup" aria-selected="false" aria-controls="panel-signup" data-show="signup" tabindex="-1">Sign up</button>
+        </div>
+
+        <!-- LOG IN -->
+        <section id="panel-login" role="tabpanel" aria-labelledby="tab-login">
+          <h1>Welcome back</h1>
+          <p class="sub">Enter your details to access your account.</p>
+          <form id="login-form">
+            <div class="field">
+              <label for="login-email">Email</label>
+              <div class="input-wrap">
+                <svg class="icon lead" aria-hidden="true"><use href="#i-mail"/></svg>
+                <input type="email" id="login-email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="login-password">Password</label>
+              <div class="input-wrap">
+                <svg class="icon lead" aria-hidden="true"><use href="#i-lock"/></svg>
+                <input type="password" id="login-password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+              </div>
+            </div>
+            <p class="form-msg" id="login-msg" role="alert" hidden></p>
+            <button type="submit" class="btn">Log in</button>
+          </form>
+          <p class="switch">New to ScholarTrack? <a href="#signup" data-show="signup">Create an account</a></p>
+        </section>
+
+        <!-- SIGN UP -->
+        <section id="panel-signup" role="tabpanel" aria-labelledby="tab-signup" hidden>
+          <h1>Create your account</h1>
+          <p class="sub">Set up your access in less than a minute.</p>
+          <form id="signup-form">
+            <div class="field">
+              <label for="su-name">Full name</label>
+              <div class="input-wrap">
+                <svg class="icon lead" aria-hidden="true"><use href="#i-user"/></svg>
+                <input type="text" id="su-name" name="name" placeholder="Your full name" autocomplete="name" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="su-email">Email</label>
+              <div class="input-wrap">
+                <svg class="icon lead" aria-hidden="true"><use href="#i-mail"/></svg>
+                <input type="email" id="su-email" name="email" placeholder="you@example.com" autocomplete="email" required>
+              </div>
+            </div>
+            <div class="field">
+              <label for="su-password">Password</label>
+              <div class="input-wrap">
+                <svg class="icon lead" aria-hidden="true"><use href="#i-lock"/></svg>
+                <input type="password" id="su-password" name="password" placeholder="At least 8 characters" minlength="8" autocomplete="new-password" required>
+              </div>
+              <div class="strength" id="strength" data-level="0">
+                <div class="strength-bar"><span></span><span></span><span></span><span></span></div>
+                <p class="strength-text" id="strength-text" aria-live="polite">Use 8+ characters with letters, numbers, and symbols.</p>
+                <ul class="rules" id="pw-rules">
+                  <li data-rule="length">At least 8 characters</li>
+                  <li data-rule="case">Upper and lowercase</li>
+                  <li data-rule="number">A number</li>
+                  <li data-rule="symbol">A symbol (! @ #)</li>
+                </ul>
+              </div>
+            </div>
+            <div class="field">
+              <label for="su-confirm">Confirm password</label>
+              <div class="input-wrap">
+                <svg class="icon lead" aria-hidden="true"><use href="#i-lock"/></svg>
+                <input type="password" id="su-confirm" name="confirm" placeholder="Re-enter your password" autocomplete="new-password" required>
+              </div>
+            </div>
+            <div class="row">
+              <label class="check"><input type="checkbox" name="terms" required><span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a></span></label>
+            </div>
+            <p class="form-msg" id="signup-msg" role="alert" hidden></p>
+            <button type="submit" class="btn">Create account</button>
+          </form>
+          <p class="switch">Already have an account? <a href="#login" data-show="login">Log in</a></p>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

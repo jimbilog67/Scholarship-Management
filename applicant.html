@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12302D">
+  <title>Review applicant | ScholarTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-page="applicant" data-access="staff">
+<div class="layout">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <p class="back"><a href="applicants.html"><span data-icon="back"></span>Back to applicants</a></p>
+
+    <header class="page-head">
+      <div class="title-wrap">
+        <button type="button" class="menu-btn" aria-controls="sidebar" aria-expanded="false" aria-label="Open menu"><span data-icon="menu"></span></button>
+        <span id="ap-avatar"></span>
+        <div>
+          <h1 id="ap-name">Loading…</h1>
+          <p class="muted" id="ap-meta"></p>
+        </div>
+      </div>
+      <span class="badge b-new" id="status-chip">New</span>
+    </header>
+
+    <div class="grid-2">
+      <div class="stack">
+        <section class="card">
+          <h2>Application details</h2>
+          <div id="ap-details"></div>
+        </section>
+        <section class="card">
+          <h2>Personal essay</h2>
+          <p class="prose" id="ap-essay"></p>
+        </section>
+        <section class="card">
+          <h2>Achievements and awards</h2>
+          <p class="prose" id="ap-achievements"></p>
+        </section>
+        <section class="card">
+          <h2>Activities and leadership</h2>
+          <p class="prose" id="ap-activities"></p>
+        </section>
+        <section class="card">
+          <h2>Documents</h2>
+          <ul class="list doc-list" id="doc-list"></ul>
+        </section>
+      </div>
+
+      <div class="stack">
+        <section class="card">
+          <h2>Your review</h2>
+          <div class="slider">
+            <div class="row-between"><label for="r-academic">Academic merit</label><output id="r-academic-out" for="r-academic">5 / 10</output></div>
+            <input type="range" id="r-academic" min="0" max="10" value="5">
+          </div>
+          <div class="slider">
+            <div class="row-between"><label for="r-need">Financial need</label><output id="r-need-out" for="r-need">5 / 10</output></div>
+            <input type="range" id="r-need" min="0" max="10" value="5">
+          </div>
+          <div class="slider">
+            <div class="row-between"><label for="r-leadership">Leadership</label><output id="r-leadership-out" for="r-leadership">5 / 10</output></div>
+            <input type="range" id="r-leadership" min="0" max="10" value="5">
+          </div>
+          <div class="slider">
+            <div class="row-between"><label for="r-essay">Essay</label><output id="r-essay-out" for="r-essay">5 / 10</output></div>
+            <input type="range" id="r-essay" min="0" max="10" value="5">
+          </div>
+          <div class="field">
+            <label for="notes">Notes (only staff can see these)</label>
+            <textarea id="notes" placeholder="Write your thoughts about this applicant"></textarea>
+          </div>
+          <div class="total"><span>Overall score</span><b id="total-score">5.0</b></div>
+          <button type="button" class="btn" id="save-review">Save review</button>
+        </section>
+
+        <section class="card">
+          <h2>Application status</h2>
+          <div class="decisions">
+            <button type="button" class="btn btn-outline status-btn" data-status="review" aria-pressed="false">Under review</button>
+            <button type="button" class="btn btn-outline status-btn" data-status="interview" aria-pressed="false">Interview</button>
+            <button type="button" class="btn btn-outline status-btn" data-status="awarded" aria-pressed="false">Awarded</button>
+            <button type="button" class="btn btn-outline status-btn" data-status="declined" aria-pressed="false">Declined</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

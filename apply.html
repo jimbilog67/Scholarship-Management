@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12302D">
+  <title>Apply | ScholarTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-page="apply" data-access="any">
+<header class="public-head">
+  <div class="logo">
+    <svg width="32" height="32" viewBox="0 0 28 28" aria-hidden="true"><rect width="28" height="28" rx="8" fill="#14B8A6"/><path d="M7 12l7-4 7 4-7 4z" fill="#fff"/><path d="M10 15v3c0 1 2 2 4 2s4-1 4-2v-3" stroke="#fff" stroke-width="1.6" fill="none"/></svg>
+    ScholarTrack
+  </div>
+  <nav aria-label="Account">
+    <a href="dashboard.html" id="staff-link" hidden>Staff dashboard</a>
+    <a href="index.html" data-logout>Log out</a>
+  </nav>
+</header>
+
+<main class="public-main">
+  <div>
+    <h1>Scholarship application</h1>
+    <p class="muted" id="applying-as"></p>
+    <p class="muted">Fields marked optional can be skipped. Only you and the scholarship staff can see your application.</p>
+  </div>
+
+  <section class="card" id="apply-closed" hidden>
+    <h2>No scholarships are open right now</h2>
+    <p class="muted">Check back later. Open scholarships appear here as soon as they are published.</p>
+  </section>
+
+  <form class="card steps" id="apply-form">
+    <fieldset>
+      <legend>Scholarship</legend>
+      <div class="field">
+        <label for="a-scholarship">Choose the scholarship you are applying for</label>
+        <select id="a-scholarship" required>
+          <option value="" disabled selected>Select a scholarship</option>
+        </select>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Personal details</legend>
+      <div class="fields">
+        <div class="field">
+          <label for="a-dob">Date of birth</label>
+          <input type="date" id="a-dob" autocomplete="bday" required>
+        </div>
+        <div class="field">
+          <label for="a-gender">Gender (optional)</label>
+          <select id="a-gender">
+            <option value="">Prefer not to say</option>
+            <option>Female</option>
+            <option>Male</option>
+            <option>Non-binary</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="a-citizenship">Citizenship</label>
+          <input type="text" id="a-citizenship" required>
+        </div>
+        <div class="field">
+          <label for="a-phone">Mobile number</label>
+          <input type="tel" id="a-phone" autocomplete="tel" required>
+        </div>
+        <div class="field full">
+          <label for="a-address">Home address</label>
+          <input type="text" id="a-address" autocomplete="street-address" required>
+        </div>
+        <div class="field">
+          <label for="a-city">City or town</label>
+          <input type="text" id="a-city" autocomplete="address-level2" required>
+        </div>
+        <div class="field">
+          <label for="a-region">Province or state</label>
+          <input type="text" id="a-region" autocomplete="address-level1" required>
+        </div>
+        <div class="field">
+          <label for="a-postal">Postal code (optional)</label>
+          <input type="text" id="a-postal" autocomplete="postal-code">
+        </div>
+        <div class="field">
+          <label for="a-country">Country</label>
+          <input type="text" id="a-country" autocomplete="country-name" required>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Education</legend>
+      <div class="fields">
+        <div class="field full">
+          <label for="a-school">School</label>
+          <input type="text" id="a-school" required>
+        </div>
+        <div class="field">
+          <label for="a-program">Program or major</label>
+          <input type="text" id="a-program" required>
+        </div>
+        <div class="field">
+          <label for="a-studentid">Student ID (optional)</label>
+          <input type="text" id="a-studentid">
+        </div>
+        <div class="field">
+          <label for="a-year">Current year level</label>
+          <select id="a-year" required>
+            <option value="" disabled selected>Select your year level</option>
+            <option>High school (final year)</option>
+            <option>1st year</option>
+            <option>2nd year</option>
+            <option>3rd year</option>
+            <option>4th year</option>
+            <option>5th year or higher</option>
+            <option>Graduate school</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="a-grad">Expected graduation</label>
+          <input type="month" id="a-grad" placeholder="YYYY-MM" pattern="\d{4}-\d{2}" required>
+        </div>
+        <div class="field">
+          <label for="a-gpa">GPA (out of 4.0)</label>
+          <input type="number" id="a-gpa" min="0" max="4" step="0.01" required>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Family and finances</legend>
+      <div class="fields">
+        <div class="field">
+          <label for="a-guardian">Parent or guardian name</label>
+          <input type="text" id="a-guardian" required>
+        </div>
+        <div class="field">
+          <label for="a-guardian-phone">Parent or guardian mobile number</label>
+          <input type="tel" id="a-guardian-phone" required>
+        </div>
+        <div class="field">
+          <label for="a-household">People in your household</label>
+          <input type="number" id="a-household" min="1" step="1" required>
+        </div>
+        <div class="field">
+          <label for="a-income">Annual household income</label>
+          <input type="number" id="a-income" min="0" step="1" required>
+          <span class="hint">Use your local currency. Reviewers use this only to assess financial need.</span>
+        </div>
+        <div class="field full">
+          <label for="a-aid">Other scholarships or financial aid you receive (optional)</label>
+          <input type="text" id="a-aid">
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Achievements and activities</legend>
+      <div class="fields">
+        <div class="field full">
+          <label for="a-achievements">Academic awards and achievements (optional)</label>
+          <textarea class="short" id="a-achievements" maxlength="1000"></textarea>
+          <span class="hint">Up to 1000 characters.</span>
+        </div>
+        <div class="field full">
+          <label for="a-activities">Activities, volunteering, and leadership (optional)</label>
+          <textarea class="short" id="a-activities" maxlength="1000"></textarea>
+          <span class="hint">Up to 1000 characters.</span>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Personal essay</legend>
+      <div class="field">
+        <label for="essay">Tell us about your goals and why you deserve this scholarship</label>
+        <textarea id="essay" maxlength="2000" required></textarea>
+        <span class="hint" id="essay-count">0 / 2000 characters</span>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Recommendation</legend>
+      <div class="fields">
+        <div class="field">
+          <label for="a-ref-name">Referee name and title</label>
+          <input type="text" id="a-ref-name" placeholder="For example, Ms. Reyes, class adviser" required>
+        </div>
+        <div class="field">
+          <label for="a-ref-contact">Referee email or phone</label>
+          <input type="text" id="a-ref-contact" required>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Documents</legend>
+      <div class="fields">
+        <div class="field">
+          <label for="a-transcript">Transcript (PDF, up to 5 MB)</label>
+          <input type="file" id="a-transcript" accept=".pdf,application/pdf" required>
+        </div>
+        <div class="field">
+          <label for="a-reference">Recommendation letter (PDF, up to 5 MB)</label>
+          <input type="file" id="a-reference" accept=".pdf,application/pdf" required>
+        </div>
+        <div class="field full">
+          <label for="a-enrollment">Proof of enrollment (optional, PDF, up to 5 MB)</label>
+          <input type="file" id="a-enrollment" accept=".pdf,application/pdf">
+        </div>
+      </div>
+    </fieldset>
+
+    <label class="check" style="margin-bottom:24px"><input type="checkbox" id="a-consent" required> I confirm the information above is accurate and I allow the scholarship staff to review it.</label>
+    <button type="submit" class="btn">Submit application</button>
+  </form>
+
+  <section class="card">
+    <h2>Your applications</h2>
+    <ul class="list" id="my-apps"></ul>
+    <div id="my-empty" hidden></div>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

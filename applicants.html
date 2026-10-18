@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12302D">
+  <title>Applicants | ScholarTrack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body data-page="applicants" data-access="staff">
+<div class="layout">
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <header class="page-head">
+      <div class="title-wrap">
+        <button type="button" class="menu-btn" aria-controls="sidebar" aria-expanded="false" aria-label="Open menu"><span data-icon="menu"></span></button>
+        <div>
+          <h1>Applicants</h1>
+          <p class="muted">Search, filter, and open an applicant to review.</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="toolbar">
+      <div class="search">
+        <span data-icon="search"></span>
+        <input type="search" id="search" aria-label="Search applicants" placeholder="Search by name, school, program, or scholarship">
+      </div>
+    </div>
+    <div class="pills" id="status-pills" role="group" aria-label="Filter by status"></div>
+
+    <section class="card flush">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">Applicant</th><th scope="col">Scholarship</th><th scope="col">School</th><th scope="col">GPA</th><th scope="col">Status</th><th scope="col">Score</th><th scope="col">Applied</th></tr>
+          </thead>
+          <tbody id="applicants-body"></tbody>
+        </table>
+      </div>
+      <div id="no-results" role="status" hidden></div>
+      <p class="table-foot" id="result-count"></p>
+    </section>
+  </main>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
